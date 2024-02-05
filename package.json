@@ -1,0 +1,15 @@
+{
+  "name": "comp4537_lab3",
+  "version": "1.0.0",
+  "description": "COMP4537_Lab3",
+  "main": "server.js",
+  "scripts": {
+    "test": "1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "1"
+  ],
+  "author": "Jackson",
+  "license": "ISC"
+}
