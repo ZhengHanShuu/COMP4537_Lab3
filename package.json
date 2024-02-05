@@ -11,5 +11,8 @@
     "1"
   ],
   "author": "Jackson",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "moment-timezone": "^0.5.45"
+  }
 }
