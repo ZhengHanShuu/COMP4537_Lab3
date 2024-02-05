@@ -1,18 +1,16 @@
-// server.js
 const http = require('http');
 const url = require('url');
 const utils = require('./modules/utils');
-const messages = require('./lang/en/en');
 
-const hostname = '127.0.0.1'; // Use your server's IP address or domain name
-const port = 3000;
+const port = process.env.PORT || 3000; // Use the PORT environment variable or default to 3000
 
 const server = http.createServer((req, res) => {
   const queryObject = url.parse(req.url, true).query;
+  
+  // Simplified by removing the redundant declaration of queryObject
   if (req.url.startsWith('/COMP4537/labs/3/getDate')) {
-    const queryObject = url.parse(req.url, true).query; // Ensure this line is correctly placed and used
     const name = queryObject.name;
-    const greeting = utils.getDate(name); // Make sure utils.getDate() is correctly importing and using any necessary data
+    const greeting = utils.getDate(name);
     res.statusCode = 200;
     res.setHeader('Content-Type', 'text/html');
     res.end(`<div style="color: blue;">${greeting}</div>`);
@@ -20,9 +18,8 @@ const server = http.createServer((req, res) => {
     res.statusCode = 404;
     res.end('<h1>404 Not Found</h1>');
   }
-  
 });
 
-server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
+server.listen(port, () => {
+  console.log(`Server running on port ${port}`);
 });
