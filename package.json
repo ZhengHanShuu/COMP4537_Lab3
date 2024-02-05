@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "1",
-    "start": "node server.js"
+    "start": "TZ='America/Los_Angeles' node server.js"
   },
   "keywords": [
     "1"
